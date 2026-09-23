@@ -18,9 +18,11 @@ class MatakuliahFactory extends Factory
                 'Jaringan Komputer',
                 'Sistem Operasi',
                 'Rekayasa Perangkat Lunak',
+                'Pemrograman Mobile',
+                'Kecerdasan Buatan',
             ]),
 
-            'sks' => fake()->numberBetween(1, 4),
+            'sks' => fake()->numberBetween(2, 4),
             'semester' => fake()->numberBetween(1, 8),
         ];
     }
