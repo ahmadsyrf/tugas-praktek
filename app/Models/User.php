@@ -7,6 +7,9 @@ use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\Matakuliah;
 
 class User extends Authenticatable
 {
@@ -23,7 +26,10 @@ class User extends Authenticatable
         'email',
         'password',
     ];
-
+    public function matakuliahs()
+    {
+        return $this->hasMany(Matakuliah::class, 'dosen_id');
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
